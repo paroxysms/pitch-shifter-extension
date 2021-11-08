@@ -1,5 +1,5 @@
 [package]
-name = "megahack-extension-rs"
+name = "pitch-shifter"
 version = "0.1.0"
 edition = "2018"
 
@@ -13,3 +13,4 @@ getfn = "0.1.1"
 detour = { git = "https://github.com/darfink/detour-rs" }
 winwrap = "0.1"
 lazy_static = "1.4"
+directories = "4.0.1"

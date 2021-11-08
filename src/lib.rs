@@ -2,6 +2,7 @@
 
 mod mhv6;
 mod extension;
+mod state;
 
 use std::{panic, thread};
 
@@ -17,6 +18,8 @@ use winwrap::raw::um::libloaderapi::*;
 use winwrap::raw::um::processthreadsapi::*;
 use winwrap::winapi::um::libloaderapi::GetModuleHandleA;
 use crate::mhv6::mhv6_init;
+use std::path::Path;
+use crate::state::State;
 
 ///
 /// **MEGAHACKv6 EXTENSION**
@@ -53,7 +56,7 @@ pub extern "system" fn DllMain(dll: HINSTANCE, reason: DWORD, _reserved: LPVOID)
 
 unsafe extern "system" fn extension_main(dll: LPVOID) -> DWORD {
     if panic::catch_unwind(|| {
-        //let _ = AllocConsole(); - Uncomment for enabling console.
+        //let _ = AllocConsole(); // - Uncomment for enabling console.
 
         //State::init();
 
@@ -66,7 +69,7 @@ unsafe extern "system" fn extension_main(dll: LPVOID) -> DWORD {
         */
     }
 
-    //FreeLibraryAndExitThread(dll as _, 0); - Uncomment for enabling console.
+    //FreeLibraryAndExitThread(dll as _, 0); // - Uncomment for enabling console.
 
     0
 }
