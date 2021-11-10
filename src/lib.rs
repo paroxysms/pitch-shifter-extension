@@ -20,6 +20,7 @@ use winwrap::winapi::um::libloaderapi::GetModuleHandleA;
 use crate::mhv6::mhv6_init;
 use std::path::Path;
 use crate::state::State;
+use std::io::Read;
 
 ///
 /// **MEGAHACKv6 EXTENSION**
@@ -68,8 +69,9 @@ unsafe extern "system" fn extension_main(dll: LPVOID) -> DWORD {
         Enter an error message here. If the extension crashes, the following will be run.
         */
     }
+    //let _ = std::io::stdin().read(&mut [0]);
 
-    //FreeLibraryAndExitThread(dll as _, 0); // - Uncomment for enabling console.
+    FreeLibraryAndExitThread(dll as _, 0); // - Uncomment for enabling console.
 
     0
 }

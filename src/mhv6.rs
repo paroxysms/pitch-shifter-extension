@@ -45,6 +45,7 @@ extern "stdcall" fn button_cb(ext: *mut ()) {
 
     //sox input.mp3 output.mp3 pitch -10
     if let Some(base_dirs) = BaseDirs::new() {
+        //println!("{:?}", std::env::current_exe());
         let path = base_dirs.cache_dir().to_str().unwrap().to_owned() + &*"\\GeometryDash\\".to_owned();
         fs::create_dir((format!("{}{}", path, "backup\\")).to_owned());
 
